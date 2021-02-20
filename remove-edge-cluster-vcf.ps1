@@ -11,7 +11,7 @@ $edgeClusterName = "sfo-w01-ec01"
 $removeEdgeCluster = @"
 tar -zxvf $edgeClusterDestination
 touch /root/.sddc_edge_removal_warning_accepted
-/root/cleanup/remove_edge_cluster.sh --cluster $edgeClusterName --user $vcenterUser --password $vcenterPassword--skip-warning
+/root/cleanup/remove_edge_cluster.sh --cluster $edgeClusterName --user $vcenterUser --password $vcenterPassword --skip-warning
 "@
 
 $viserver = Connect-VIServer -Server $vcenterFqdn -User $vcenterUser -Password $vcenterPassword -Force
