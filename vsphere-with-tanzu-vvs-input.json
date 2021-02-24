@@ -1,0 +1,60 @@
+{   "domainName" : "sfo.rainpole.io",
+    "nsxt": {
+        "nsxtManagerFqdn" : "sfo-w01-nsx01.sfo.rainpole.io",
+        "nsxtAdminUsername" : "admin",
+        "nsxtAdminPassword" : "VMw@re1!1234",
+        "overlay" : {
+            "overlayTransportZoneName" : "overlay-tz-sfo-w01-nsx01.sfo.rainpole.io",
+            "tier0GatewayName" : "sfo-w01-ec01-t0-gw01",
+            "tier1GatewayName" : "sfo-w01-ec01-t1-gw01",
+            "kubSegmentName" : "sfo-w01-kub-seg01",
+            "kubSegmentGatewayCIDR" : "192.168.20.1/24",
+            "kubSegmentSubnetCIDR" : "192.168.20.0/24",
+            "ingressSubnetCIDR" : "192.168.21.0/24",
+            "egressSubnetCIDR" : "192.168.22.0/24",
+            "podsSubnetCIDR" : "100.100.0.0/20",
+            "servicesSubnetCIDR" : "100.200.0.0/22"
+        },
+        "routes" : {
+            "ipPrefixListName" : "sfo-w01-ec01-prefix-list",
+            "routeMapName" : "sfo-w01-ec01-route-map",
+            "localeServicesName" : "default",
+            "edgeClusterName" : "sfo-w01-ec01"
+        }
+    },
+    "vsphere" : {
+        "computeManagerFqdn" : "sfo-w01-vc01.sfo.rainpole.io",
+        "computeManagerAdminUsername" : "administrator@vsphere.local",
+        "computeManagerAdminPassword" : "VMw@re1!",
+        "contentLibrary" : {
+            "contentLibraryName" : "Kubernetes",
+            "contentLibraryUrl" : "https://wp-content.vmware.com/v2/latest/lib.json",
+            "wldDatastoreName"  : "sfo-w01-cl01-ds-vsan01"
+        },
+        "storagePolicy" : {
+            "spbmPolicyName" : "vsphere-with-tanzu-policy",
+            "spbmRuleSetName" : "vsphere-with-tanzu-ruleset",
+            "tagName" : "vsphere-with-tanzu-tag",
+            "tagCategoryName" : "vsphere-with-tanzu-category"
+        },
+        "vsphereWithTanzu": {
+            "wmClusterName" : "sfo-w01-cl01",
+            "wmClusterSize" : "Tiny",
+            "wmClusterMgmtNetworkMode" : "StaticRange",
+            "wmClusterMgmtStartIpAddress" : "192.168.20.10",
+            "wmClusterMgmtNetworkAddressRangeSize" : 5,
+            "wmClusterMgmtNetworkGateway" : "192.168.20.1",
+            "wmClusterMgmtNetmask" : "255.255.255.0",
+            "ntpServerIpAddress1" : "172.16.11.253",
+            "ntpServerIpAddress2" : "172.16.12.253",
+            "supClusterVdsName" : "sfo-w01-cl01-vds01",
+            "dnsServerIpAddress1" : "172.16.11.4",
+            "dnsServerIpAddress2" : "172.16.11.5",
+            "dnsSearchDomain" : "sfo.rainpole.io",
+            "wmNamespaceName" : "sfo-w01-ns01",
+            "wmTkcNamespaceName" : "sfo-w01-tkc01",
+            "wmNamespaceEditUserGroup" : "ug-kub-admins",
+            "wmNamespaceViewUserGroup" : "ug-kub-viewonly"
+        }
+    }
+}
